@@ -11,66 +11,42 @@
 var randomNumber = Math.floor(Math.random() * 120) + 19
 var wins = 0;
 var losses = 0;
-var totalScore = $('#guessedNumber');
-var allTotal = "";
 var crystal1 = Math.ceil(Math.random() * 12);
 var crystal2 = Math.ceil(Math.random() * 12);
 var crystal3 = Math.ceil(Math.random() * 12);
 var crystal4 = Math.ceil(Math.random() * 12);
+var guessedScore = 0;
+var num = 0;
+
+$("#randomNumber").text(randomNumber);
+$("#wins").text(wins)
+$("#losses").text(losses)
 
 
 $('#crystal-1').click(function() {
-    var num = +totalScore.text();
-    totalScore.text(num + crystal1);
+    num = +$("#guessedNumber").text();
+    $("#guessedNumber").text(num + crystal1);
+    guessedScore = num + crystal1;
+
 });
+
 $('#crystal-2').click(function() {
-    var num = +totalScore.text();
-    totalScore.text(num + crystal2);
+    num = +$("#guessedNumber").text();
+    $("#guessedNumber").text(num + crystal2);
+    guessedScore = num + crystal2;
 });
+
 $('#crystal-3').click(function() {
-    var num = +totalScore.text();
-    totalScore.text(num + crystal3);
+    num = +$("#guessedNumber").text();
+    $("#guessedNumber").text(num + crystal3);
+   	guessedScore = num + crystal3;
 });
+
 $('#crystal-4').click(function() {
-    var num = +totalScore.text();
-    totalScore.text(num + crystal4);
+    num = +$("#guessedNumber").text();
+    $("#guessedNumber").text(num + crystal4);
+    guessedScore = num + crystal4;
 });
-
-
-$("#randomNumber").append(randomNumber);
-
-// $("#crystal-1").click(function() {
-  
-// 	var allTotal = (totalScore += crystal1);
-// 	$("#guessedNumber").append(allTotal);
-
-// });
-
-// $("#crystal-2").click(function() {
-  
-// 	var allTotal = (totalScore += crystal2);
-// 	$("#guessedNumber").append(allTotal);
-
-// });
-
-// $("#crystal-3").click(function() {
-  
-// 	var allTotal = (totalScore += crystal3);
-// 	$("#guessedNumber").append(allTotal);
-
-// });
-
-// $("#crystal-4").click(function() {
-  
-// 	var allTotal = (totalScore += crystal4);
-// 	$("#guessedNumber").append(allTotal);
-
-// });
-
-
-
-
-
 
 
 // function resetGame(){
@@ -81,16 +57,17 @@ $("#randomNumber").append(randomNumber);
 // 	var crystal4 = Math.floor(Math.random() * 13);
 // }
 
+if (guessedScore === randomNumber) {
+	wins++;
+	resetGame();
+}
+else
 
-// if (allTotal===randomNumber) {
-// 	wins++;
-
-// }
-// else {
-// 	losses--;
-// }
-
-
+if (guessedScore > randomNumber) {
+	losses++;
+	resetGame();
+	alert('itsworking!!')
+}
 
 
 
