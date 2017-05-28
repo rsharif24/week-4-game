@@ -9,7 +9,8 @@
 // --new random number
 // --each crystal is assigned an new number
 // --the number guessed box is cleared
- $(document).ready(function() {   
+ 
+$(document).ready(function() {   
 
 var randomNumber = Math.floor(Math.random() * 120) + 19;
 var wins = 0;
@@ -41,14 +42,13 @@ $('#crystal-1').click(function() {
 
     var p = document.getElementById('guessedNumber');
 	var text = p.innerHTML;
-	var number = Number(text);
-	console.log(number);
+	var playerNumber = Number(text);
 
-		if (number === randomNumber) {
+		if (playerNumber === randomNumber) {
 			wins++;
 			reset();
 		}
-		if (number > randomNumber) {
+		if (playerNumber > randomNumber) {
 			losses++;
 			reset();
 		}
@@ -65,14 +65,13 @@ $('#crystal-2').click(function() {
 
     var p = document.getElementById('guessedNumber');
 	var text = p.innerHTML;
-	var number = Number(text);
-	console.log(number);
+	var playerNumber = Number(text);
 
-	    if (number === randomNumber) {
+	    if (playerNumber === randomNumber) {
 			wins++;
 			reset();
 		}
-		if (number > randomNumber) {
+		if (playerNumber > randomNumber) {
 			losses++;
 			reset();
 		}
@@ -89,14 +88,13 @@ $('#crystal-3').click(function() {
 
     var p = document.getElementById('guessedNumber');
 	var text = p.innerHTML;
-	var number = Number(text);
-	console.log(number);
+	var playerNumber = Number(text);
 
-	    if (number === randomNumber) {
+	    if (playerNumber === randomNumber) {
 			wins++;
 			reset();
 		}
-		if (number > randomNumber) {
+		if (playerNumber > randomNumber) {
 			losses++;
 			reset();
 		}
@@ -113,14 +111,13 @@ $('#crystal-4').click(function() {
 
     var p = document.getElementById('guessedNumber');
 	var text = p.innerHTML;
-	var number = Number(text);
-	console.log(number);
+	var playerNumber = Number(text);
 
-	    if (number === randomNumber) {
+	    if (playerNumber === randomNumber) {
 			wins++;
 			reset();
 		}
-		if (number > randomNumber) {
+		if (playerNumber > randomNumber) {
 			losses++;
 			reset();
 		}
