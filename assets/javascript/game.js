@@ -24,15 +24,16 @@ $("#randomNumber").text(randomNumber);
 
 
 function reset(){
-	var randomNumber = Math.floor(Math.random() * 120) + 19;
-	var crystal1 = Math.floor(Math.random() * 12) + 1;
-	var crystal2 = Math.floor(Math.random() * 12) + 1;
-	var crystal3 = Math.floor(Math.random() * 12) + 1;
-	var crystal4 = Math.floor(Math.random() * 12) + 1;
+	 randomNumber = Math.floor(Math.random() * 120) + 19;
+	 crystal1 = Math.floor(Math.random() * 12) + 1;
+	 crystal2 = Math.floor(Math.random() * 12) + 1;
+	 crystal3 = Math.floor(Math.random() * 12) + 1;
+	 crystal4 = Math.floor(Math.random() * 12) + 1;
 	$("#randomNumber").text(randomNumber);
 	$('#guessedNumber').empty();
-
 }
+
+
 
 $('#crystal-1').click(function() {
     num = +$("#guessedNumber").html();
@@ -43,17 +44,14 @@ $('#crystal-1').click(function() {
 	var number = Number(text);
 	console.log(number);
 
-	if (number === randomNumber) {
-		wins++;
-		reset();
-
-	}
-
-	if (number > randomNumber) {
-		losses++;
-		reset();
-	}
-
+		if (number === randomNumber) {
+			wins++;
+			reset();
+		}
+		if (number > randomNumber) {
+			losses++;
+			reset();
+		}
 
 	$("#wins").html(wins);
 	$("#losses").html(losses);
@@ -70,19 +68,17 @@ $('#crystal-2').click(function() {
 	var number = Number(text);
 	console.log(number);
 
-    if (number === randomNumber) {
-		wins++;
-		reset();
-	}
+	    if (number === randomNumber) {
+			wins++;
+			reset();
+		}
+		if (number > randomNumber) {
+			losses++;
+			reset();
+		}
 
-	if (number > randomNumber) {
-		losses++;
-		reset();
-	}
-
-
-$("#wins").html(wins);
-$("#losses").html(losses);
+	$("#wins").html(wins);
+	$("#losses").html(losses);
 });
 
 
@@ -96,18 +92,17 @@ $('#crystal-3').click(function() {
 	var number = Number(text);
 	console.log(number);
 
-    if (number === randomNumber) {
-		wins++;
-		reset();
-	}
-	if (number > randomNumber) {
-		losses++;
-		reset();
-	}
+	    if (number === randomNumber) {
+			wins++;
+			reset();
+		}
+		if (number > randomNumber) {
+			losses++;
+			reset();
+		}
 
-
-$("#wins").html(wins);
-$("#losses").html(losses);
+	$("#wins").html(wins);
+	$("#losses").html(losses);
 });
 
 
@@ -121,18 +116,17 @@ $('#crystal-4').click(function() {
 	var number = Number(text);
 	console.log(number);
 
-    if (number === randomNumber) {
-		wins++;
-		reset();
-}
-	if (number > randomNumber) {
-		losses++;
-		reset();
-}
+	    if (number === randomNumber) {
+			wins++;
+			reset();
+		}
+		if (number > randomNumber) {
+			losses++;
+			reset();
+		}
 
-
-$("#wins").html(wins);
-$("#losses").html(losses);
+	$("#wins").html(wins);
+	$("#losses").html(losses);
 });
 
 
