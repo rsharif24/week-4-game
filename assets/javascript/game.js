@@ -6,6 +6,9 @@
 //if number equals random generated number = win 
 //if number is > than random number it is a loss
 //reset game
+// --new random number
+// --each crystal is assigned an new number
+// --the number guessed box is cleared
  $(document).ready(function() {   
 
 var randomNumber = Math.floor(Math.random() * 120) + 19;
@@ -26,6 +29,9 @@ function reset(){
 	var crystal2 = Math.floor(Math.random() * 12) + 1;
 	var crystal3 = Math.floor(Math.random() * 12) + 1;
 	var crystal4 = Math.floor(Math.random() * 12) + 1;
+	$("#randomNumber").text(randomNumber);
+	$('#guessedNumber').empty();
+
 }
 
 $('#crystal-1').click(function() {
@@ -39,7 +45,8 @@ $('#crystal-1').click(function() {
 
 	if (number === randomNumber) {
 		wins++;
-		
+		reset();
+
 	}
 
 	if (number > randomNumber) {
@@ -65,7 +72,7 @@ $('#crystal-2').click(function() {
 
     if (number === randomNumber) {
 		wins++;
-		
+		reset();
 	}
 
 	if (number > randomNumber) {
@@ -91,7 +98,7 @@ $('#crystal-3').click(function() {
 
     if (number === randomNumber) {
 		wins++;
-		
+		reset();
 	}
 	if (number > randomNumber) {
 		losses++;
@@ -116,7 +123,7 @@ $('#crystal-4').click(function() {
 
     if (number === randomNumber) {
 		wins++;
-		
+		reset();
 }
 	if (number > randomNumber) {
 		losses++;
