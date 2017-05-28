@@ -8,99 +8,125 @@
 //reset game
  $(document).ready(function() {   
 
-var randomNumber = Math.floor(Math.random() * 120) + 19
+var randomNumber = Math.floor(Math.random() * 120) + 19;
 var wins = 0;
 var losses = 0;
-var crystal1 = Math.ceil(Math.random() * 12);
-var crystal2 = Math.ceil(Math.random() * 12);
-var crystal3 = Math.ceil(Math.random() * 12);
-var crystal4 = Math.ceil(Math.random() * 12);
-var guessedScore = 0;
-var num = 0;
+var crystal1 = Math.floor(Math.random() * 12) + 1;
+var crystal2 = Math.floor(Math.random() * 12) + 1;
+var crystal3 = Math.floor(Math.random() * 12) + 1;
+var crystal4 = Math.floor(Math.random() * 12) + 1;
+
 
 $("#randomNumber").text(randomNumber);
-$("#wins").text(wins)
-$("#losses").text(losses)
 
+
+function reset(){
+	var randomNumber = Math.floor(Math.random() * 120) + 19;
+	var crystal1 = Math.floor(Math.random() * 12) + 1;
+	var crystal2 = Math.floor(Math.random() * 12) + 1;
+	var crystal3 = Math.floor(Math.random() * 12) + 1;
+	var crystal4 = Math.floor(Math.random() * 12) + 1;
+}
 
 $('#crystal-1').click(function() {
-    num = +$("#guessedNumber").text();
-    $("#guessedNumber").text(num + crystal1);
-    guessedScore = num + crystal1;
+    num = +$("#guessedNumber").html();
+    $("#guessedNumber").html(num + crystal1);
+
+    var p = document.getElementById('guessedNumber');
+	var text = p.innerHTML;
+	var number = Number(text);
+	console.log(number);
+
+	if (number === randomNumber) {
+		wins++;
+		
+	}
+
+	if (number > randomNumber) {
+		losses++;
+		reset();
+	}
+
+
+	$("#wins").html(wins);
+	$("#losses").html(losses);
 
 });
+
 
 $('#crystal-2').click(function() {
-    num = +$("#guessedNumber").text();
-    $("#guessedNumber").text(num + crystal2);
-    guessedScore = num + crystal2;
+    num = +$("#guessedNumber").html();
+    $("#guessedNumber").html(num + crystal2);
+
+    var p = document.getElementById('guessedNumber');
+	var text = p.innerHTML;
+	var number = Number(text);
+	console.log(number);
+
+    if (number === randomNumber) {
+		wins++;
+		
+	}
+
+	if (number > randomNumber) {
+		losses++;
+		reset();
+	}
+
+
+$("#wins").html(wins);
+$("#losses").html(losses);
 });
+
 
 $('#crystal-3').click(function() {
-    num = +$("#guessedNumber").text();
-    $("#guessedNumber").text(num + crystal3);
-   	guessedScore = num + crystal3;
+
+    num = +$("#guessedNumber").html();
+    $("#guessedNumber").html(num + crystal3);
+
+    var p = document.getElementById('guessedNumber');
+	var text = p.innerHTML;
+	var number = Number(text);
+	console.log(number);
+
+    if (number === randomNumber) {
+		wins++;
+		
+	}
+	if (number > randomNumber) {
+		losses++;
+		reset();
+	}
+
+
+$("#wins").html(wins);
+$("#losses").html(losses);
 });
+
 
 $('#crystal-4').click(function() {
-    num = +$("#guessedNumber").text();
-    $("#guessedNumber").text(num + crystal4);
-    guessedScore = num + crystal4;
+
+    num = +$("#guessedNumber").html();
+    $("#guessedNumber").html(num + crystal4);
+
+    var p = document.getElementById('guessedNumber');
+	var text = p.innerHTML;
+	var number = Number(text);
+	console.log(number);
+
+    if (number === randomNumber) {
+		wins++;
+		
+}
+	if (number > randomNumber) {
+		losses++;
+		reset();
+}
+
+
+$("#wins").html(wins);
+$("#losses").html(losses);
 });
-
-
-// function resetGame(){
-// 	var randomNumber = Math.floor(Math.random() * 120) + 19
-// 	var crystal1 = Math.floor(Math.random() * 13);
-// 	var crystal2 = Math.floor(Math.random() * 13);
-// 	var crystal3 = Math.floor(Math.random() * 13);
-// 	var crystal4 = Math.floor(Math.random() * 13);
-// }
-
-if (guessedScore === randomNumber) {
-	wins++;
-	resetGame();
-}
-else
-
-if (guessedScore > randomNumber) {
-	losses++;
-	resetGame();
-	alert('itsworking!!')
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
